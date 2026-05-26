@@ -1,0 +1,25 @@
+# Personal Overrides (gitignored)
+
+> Rename this file to `CLAUDE.local.md` and add it to `.gitignore`.
+> It loads alongside `CLAUDE.md` but stays private to your machine.
+
+## Personal Preferences for This Project
+
+<!-- Anything you want Claude to know that shouldn't be on the team-shared CLAUDE.md.
+     Examples:
+     - "I'm experimenting with a refactor on the auth module — don't suggest reverts"
+     - "Skip the long architecture explanations, I wrote it"
+     - "Use my personal API key from ~/.config/myservice when running locally"
+-->
+
+TODO.
+
+## Local Environment
+
+<!-- Anything machine-specific:
+     - WSL2 quirks
+     - Local ports already in use
+     - Personal aliases or shell config
+-->
+
+TODO.

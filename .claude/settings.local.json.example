@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "_comment": "Rename to settings.local.json (gitignored). Use for personal-only permission tweaks, e.g. allowing your local DB credentials path.",
+  "permissions": {
+    "allow": [],
+    "deny": []
+  }
+}
