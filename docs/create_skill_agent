@@ -1,0 +1,25 @@
+# 1. Decide: skill or agent?
+#    - Skill: "Claude should DO this workflow when the request matches"
+#    - Agent: "Claude should DELEGATE to a specialized persona in isolated context"
+
+# 2. Create the file(s)
+mkdir -p .claude/skills/<name>           # skill: folder
+$EDITOR .claude/skills/<name>/SKILL.md   # body inside
+
+# OR
+
+$EDITOR .claude/agents/<name>.md         # agent: single file
+
+# 3. Verify the frontmatter
+#    - name: matches the folder/file
+#    - description: specific, includes trigger phrases
+#    - (agents only) tools: minimum set the persona needs
+
+# 4. Commit
+git add .claude/skills/<name>/ .claude/agents/<name>.md
+git commit -m "feat(claude): add <name> skill/agent"
+git push
+
+# 5. Test in a real project
+cd ~/projects/somewhere && claude
+# Make a request that should trigger it. Adjust description if it doesn't.
