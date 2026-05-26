@@ -32,3 +32,6 @@ Thumbs.db
 .vscode/
 *.swp
 *~
+
+# Windows NTFS alternate data streams (created when copying files from Windows to WSL)
+*:Zone.Identifier
