@@ -67,6 +67,26 @@
     ]
   },
   "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/session-startup.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/nag-tracker-update.sh"
+          }
+        ]
+      }
+    ],
     "PostToolUse": [
       {
         "matcher": "Edit|Write|MultiEdit",
@@ -74,6 +94,10 @@
           {
             "type": "command",
             "command": ".claude/hooks/format-python.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/sync-env-example.sh"
           }
         ]
       }
@@ -85,6 +109,24 @@
           {
             "type": "command",
             "command": ".claude/hooks/check-secrets.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/block-unsolicited-md.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/enforce-commit-format.sh"
           }
         ]
       }

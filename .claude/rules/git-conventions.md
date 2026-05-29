@@ -17,23 +17,26 @@ Examples:
 
 ## Commit messages
 
-Conventional Commits format:
+Date-prefixed Conventional Commits:
 
 ```
-<type>(<scope>): <subject>
+[YYYY-MM-DD] <type>(<scope>): <subject>
 
 <body>
 
 <footer>
 ```
 
-- **Subject**: imperative mood, ≤72 chars, no trailing period
+- **Date prefix**: today's date in ISO format, in square brackets. Required.
+  Enforced by `.claude/hooks/enforce-commit-format.sh`. See
+  `.claude/rules/timestamp-discipline.md`.
+- **Subject**: imperative mood, ≤72 chars (after the date prefix), no trailing period
 - **Body**: explain *why* and *what*, not *how*. Wrap at 72 chars.
 - **Footer**: `BREAKING CHANGE:` notes, issue refs (`Closes #42`)
 
 Good:
 ```
-feat(orders): add idempotency key to order submission
+[2026-05-29] feat(orders): add idempotency key to order submission
 
 Prevents duplicate orders when the client retries on network errors.
 Idempotency key is hashed and stored for 24h.
@@ -44,6 +47,8 @@ Closes #142
 Bad:
 ```
 fixed stuff
+feat: did things                      # missing date prefix
+[2026-5-29] feat: tweak something     # date not zero-padded
 ```
 
 ## Pull requests

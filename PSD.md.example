@@ -1,0 +1,195 @@
+# {PROJECT_NAME} — Product Specification Document (PSD)
+
+**Version:** 1.0
+**Author:** TODO
+**Last Updated:** YYYY-MM-DD
+**Status:** TODO (e.g., "Pre-launch MVP", "Post-MVP build-out", "v2 in design")
+
+---
+
+## Document Purpose
+
+This document is two things at once:
+
+1. **{PROJECT_NAME}'s product spec** — what's live, what's planned, and the decisions behind both.
+2. **Reference architecture for future projects** — patterns to reuse.
+
+Sections are tagged so the role is clear:
+
+- 🟢 **LIVE** — implemented and deployed today.
+- 🟡 **PLANNED** — committed direction; not yet implemented.
+- 🔵 **STANDARD PATTERN** — default for any project. This one uses it; future projects start with it.
+
+When working in this project, prefer LIVE sections as ground truth. When starting a new project, STANDARD PATTERN sections are the template to copy.
+
+---
+
+## 1. Product Overview 🟢
+
+### 1.1 What it is
+TODO: One paragraph in plain language.
+
+### 1.2 Problem statement
+TODO: What's broken in the world without this product?
+
+### 1.3 Target user
+TODO: Primary + secondary.
+
+### 1.4 Core value proposition
+TODO: One sentence — "Bring X. We do Y."
+
+### 1.5 Surfaces
+
+TODO: Public-facing URLs / endpoints / clients.
+
+| Surface | URL | Auth | What it does |
+|---|---|---|---|
+| TODO | TODO | TODO | TODO |
+
+---
+
+## 2. Reference Stack 🔵
+
+Pinned vendor and library choices. See `.claude/rules/stack-defaults.md` for the template-wide defaults this project starts from.
+
+| Concern | Service | Why this one |
+|---|---|---|
+| Backend hosting | TODO | TODO |
+| Backend framework | TODO | TODO |
+| Database | TODO | TODO |
+| Cache | TODO | TODO |
+| Static hosting | TODO | TODO |
+| Transactional email | TODO | TODO |
+| AI primary | TODO | TODO |
+| Notifications | TODO | TODO |
+| Observability | TODO | TODO |
+| CI/CD | TODO | TODO |
+
+Record deviations from `stack-defaults.md` here with the reason. Defaults inherited without change need only "default" as the rationale.
+
+---
+
+## 3. Architecture 🟢
+
+### 3.1 Stack (current)
+TODO: Authoritative current state — tech, version, deploy target per layer.
+
+### 3.2 Project structure
+TODO: Annotated repo tree.
+
+---
+
+## 4. Hosting Map 🟢
+
+TODO: Per-environment table — every surface, every host, every URL.
+
+| Surface | Host | Branch | Prod domain | Dev/staging domain |
+|---|---|---|---|---|
+| TODO | TODO | TODO | TODO | TODO |
+
+---
+
+## 5. Branch Workflow + CI/CD 🔵
+
+TODO: Promotion path (feature → staging → prod), CI checks, hot-fix exception. See `.claude/rules/git-conventions.md` for the template default.
+
+---
+
+## 6. Database Schema 🟢
+
+TODO: Table inventory + key columns per table. Migration tool + naming convention.
+
+---
+
+## 7. API Specification 🟢
+
+TODO: Endpoint groups + auth model + standard response shape. See `.claude/rules/coding-discipline.md` for response shape pattern.
+
+---
+
+## 8. Auth Model 🟢 + 🟡
+
+TODO: Current auth scheme + planned changes. See `.claude/rules/stack-defaults.md` for the recommended pattern (in-house JWT + UUID API key hybrid).
+
+---
+
+## 9. Plan Tiers / Pricing 🟢
+
+TODO: Tier structure + enforcement matrix + standardized refusal envelope. **Skip if not a tiered SaaS.**
+
+---
+
+## 10. Email Infrastructure 🟢
+
+TODO: Provider, what's sent, bounce/complaint handling, log-only dev mode.
+
+---
+
+## 11. AI Agent (if applicable) 🟢 + 🟡
+
+TODO: Provider strategy, quota system, warning thresholds. **Skip if no AI features.**
+
+---
+
+## 12. Notifications 🟢
+
+TODO: Channels (Telegram, WhatsApp, email), user linking flow, admin alerts.
+
+---
+
+## 13. Observability 🟢
+
+TODO: Logging stack, error tracker, `request_id` correlation, sanitized prod errors.
+
+---
+
+## 14. Standardized Error Envelopes 🟢 + 🔵
+
+TODO: General error shape + special envelopes (e.g., plan-limit-exceeded if tiered).
+
+---
+
+## 15. Security 🟢
+
+TODO: HTTP security headers, CORS allowlist, rate limiting layers, secret hygiene. See `.claude/rules/secrets-and-env.md` for the env / secret pattern.
+
+---
+
+## 16. Non-Functional Requirements 🟢
+
+TODO: Latency targets, uptime, cost ceilings, backup cadence.
+
+---
+
+## 17. Out of Scope 🟡
+
+See `.claude/rules/mvp-boundaries.md` for the "What NOT to Build" list. This section can quote or expand the table.
+
+---
+
+## 18. Roadmap 🟡
+
+### 18.1 Pre-launch blockers
+TODO
+
+### 18.2 Pre-launch quality
+TODO
+
+### 18.3 Post-launch
+TODO
+
+---
+
+## 19. Decisions Log
+
+Chronological record of significant technical and product decisions.
+
+| Date | Decision | Rationale |
+|---|---|---|
+| YYYY-MM-DD | TODO | TODO |
+
+Always update when reversing a previous decision. The "why we reversed" matters as much as the original "why".
+
+---
+
+*This document is the bible. Update it when architecture changes — same session as the change, not later. See `.claude/rules/psd-maintenance.md` for the maintenance pattern.*

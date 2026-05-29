@@ -11,11 +11,22 @@ PROJECT_NAME is a TODO.
 
 ## Tech Stack
 
-- **Language**: TODO (e.g., Python 3.12)
-- **Framework**: TODO (e.g., FastAPI)
-- **Database**: TODO (e.g., PostgreSQL 16)
-- **Deployment**: TODO (e.g., Railway, Docker)
-- **Testing**: TODO (e.g., pytest, pytest-asyncio)
+Pin actual choices here. See `.claude/rules/stack-defaults.md` for the
+defaults this template assumes and when to deviate.
+
+- **Language**: TODO (default: Python 3.11+)
+- **Framework**: TODO (default: FastAPI async)
+- **Database**: TODO (default: PostgreSQL via Railway plugin)
+- **Cache**: TODO (default: Redis via Railway plugin)
+- **Backend hosting**: TODO (default: Railway)
+- **Static hosting + CDN**: TODO (default: Cloudflare Pages)
+- **Transactional email**: TODO (default: Postmark)
+- **AI**: TODO (default: Anthropic Haiku 4.5 + OpenRouter fallback)
+- **Notifications**: TODO (default: Telegram bot)
+- **Error tracking**: TODO (default: Sentry)
+- **Logging**: TODO (default: structlog JSON + request_id middleware)
+- **CI/CD**: TODO (default: GitHub Actions)
+- **Testing**: TODO (default: pytest + pytest-asyncio + fakeredis)
 
 ## Architecture
 
@@ -41,9 +52,22 @@ TODO
 
 ## Conventions
 
-Detailed conventions live in modular rule files. Read these when relevant:
+Detailed conventions live in modular rule files. Read these when relevant.
 
-- `.claude/rules/code-style.md` — formatting, naming, structure
+**Critical (read every session):**
+
+- `.claude/rules/no-unsolicited-md.md` — never create `.md` files without an explicit ask
+- `.claude/rules/project-tracker-discipline.md` — update `project_tracker.md` at session end
+- `.claude/rules/timestamp-discipline.md` — `[YYYY-MM-DD]` commit prefix, dated migrations, ISO logs
+- `.claude/rules/coding-discipline.md` — no fake data, no stdout logging, money is Decimal, async is contagious
+- `.claude/rules/secrets-and-env.md` — `.env` / `.env.example` pattern, app-runtime vs deploy-target secrets
+- `.claude/rules/mvp-boundaries.md` — the "What NOT to Build" list — fill in per project
+
+**Reference (read when relevant):**
+
+- `.claude/rules/stack-defaults.md` — default vendor / library choices + when to deviate
+- `.claude/rules/psd-maintenance.md` — when and how to maintain `PSD.md` (the long-form spec)
+- `.claude/rules/code-style.md` — formatting, naming, structure (language-specific)
 - `.claude/rules/testing.md` — what to test, how to test, coverage expectations
 - `.claude/rules/git-conventions.md` — branch naming, commit messages, PR flow
 
